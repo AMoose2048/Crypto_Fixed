@@ -1,6 +1,27 @@
-#
-# Copyright (C) 2025 The Android Open Source Project
-# Copyright (C) 2025 SebaUbuntu's TWRP device tree generator
-#
-# SPDX-License-Identifier: Apache-2.0
-#
+#!/bin/bash
+
+export LC_ALL="C"
+
+# Build env.
+export FOX_BUILD_DEVICE=TB350FU
+export ALLOW_MISSING_DEPENDENCIES=true
+export FOX_VANILLA_BUILD=1
+export FOX_AB_DEVICE=1
+export FOX_VIRTUAL_AB_DEVICE=1
+
+# V.boot
+export FOX_VENDOR_BOOT_RECOVERY=1
+export OF_NO_REFLASH_CURRENT_ORANGEFOX=0
+
+# Things?
+export OF_NO_TREBLE_COMPATIBILITY_CHECK=1
+export OF_USE_LEGACY_BATTERY_SERVICES=1
+export OF_USE_LZ4_COMPRESSION=1
+export OF_RUN_POST_FORMAT_PROCESS=1
+export FOX_USE_NANO_EDITOR=1
+export FOX_INSTALLER_DISABLE_AUTOREBOOT=1
+
+# Disable explicit notch or status bar padding offsets that blow up tablet headers
+#export OF_STATUS_BAR_PADDING_LEFT=0
+#export OF_STATUS_BAR_PADDING_RIGHT=0
+#export OF_STATUS_BAR_PADDING_TOP=0
